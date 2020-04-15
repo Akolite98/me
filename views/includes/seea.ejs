@@ -1,0 +1,104 @@
+<section class="ftco-section ftco-no-pb goto-here" id="resume-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <nav id="navi">
+                    <ul>
+                        <li><a href="#page-1">Skills</a></li>
+                        <li><a href="#page-2">Experience</a></li>
+                        <li><a href="#page-3">Education</a></li>
+                        <li><a href="#page-4">Achievements</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-9">
+                <!-- skill -->
+                <div id="page-1" class="page three">
+                    <h2 class="heading">Skills</h2>
+                    <section>
+                        <h2 class="title">Tech I use</h2>
+                        <p class="text-muted">
+                            <em>Learning new skill is fun and I really do enjoy getting the
+                                experience.</em>
+                        </p>
+                        <div class="brands row">
+                            <% if(skills) { %>
+                            <% for (let i=0; i < skills.length; i++) { %>
+                            <div class=" col-lg-1 col-md-2 col-sm-2 col-3">
+                                <strong style="color:black"><%= skills[i].title %></strong>
+                                <a href="<%= skills[i].title_url %>" target="_blank">
+                                    <img src="<%= skills[i].logo_url %>" alt="<%= skills[i].alt %>" class="img-fluid" />
+                                </a>
+                            </div>
+                            <% } %>
+                            <% } %>
+                        </div>
+                    </section>
+                </div>
+                <!-- skills ends here -->
+
+                <!-- experience -->
+                <div id="page-2" class="page two">
+                    <h2 class="heading">Experience</h2>
+                    <% if(experience) { %>
+                    <% for (let i=0; i < experience.length; i++) { %>
+                    <div class="resume-wrap d-flex ftco-animate">
+                        <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="flaticon-ideas"></span>
+                        </div>
+                        <div class="text pl-3">
+                            <span class="date"><%= experience[i].date %></span>
+                            <h2><%= experience[i].title %></h2>
+                            <span class="position"><%= experience[i].position %></span>
+                            <p><%= experience[i].task %></p>
+                        </div>
+                    </div>
+                    <% } %>
+                    <% } %>
+
+                </div>
+                <!-- experience ends here -->
+
+                <!-- Education -->
+                <div id="page-3" class="page one">
+                    <% if(education) { %>
+                        <% for (let i=0; i < education.length; i++) { %>
+                    <h2 class="heading"><%= education[i].title %></h2>
+                    <div class="resume-wrap d-flex ftco-animate">
+                        <div class="text pl-3">
+                            <span class="date"><%= education[i].date %></span>
+                            <h2><%= education[i].course %></h2>
+                            <span class="position"><%= education[i].school %></span>
+                            <p><%= education[i].describe %></p>
+                        </div>
+                    </div>
+                    <% } %>
+                    <% } %>
+                </div>
+                <!-- Education ends  -->
+
+                <!-- Achievements -->
+                <div id="page-4" class="page four">
+                    <h2 class="heading">Achievements</h2>
+                    <% if(achievement) { %>
+                        <% for (let i=0; i < achievement.length; i++) { %>
+                    <div class="resume-wrap d-flex ftco-animate">
+                        <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="flaticon-ideas"></span>
+                        </div>
+                        <div class="text pl-3">
+                            <span class="date"><%= achievement[i].date %></span>
+                            <h2><%= achievement[i].title %></h2>
+                            <span class="position"><%= achievement[i].position %></span>
+                            <p><%= achievement[i].describe %> </p>
+                        </div>
+                    </div>
+                    <% } %>
+                    <% } %>
+
+                </div>
+                <!-- ends -->
+            </div>
+        </div>
+    </div>
+</section>
