@@ -12,6 +12,8 @@ exports.getHomePage = (req,res,next)=>{
     let skills = Skill.fetchAll();
     let education = Education.fetchAll();
     let achievement = Achievement.fetchAll();
+
+    res.set('Cache-Control','public, max-age = 3000, s-maxage=6000');
     res.render('index', {
         title: "Amadi Chukwuemeka Austin | Software Engineer",
         description:"Am a Software Engineer who is passionate about solving complex problems by Building technological solutions out of business needs",
